@@ -1,10 +1,8 @@
-<html>
-    <head>
-        <title>Questions</title>
-    </head>
-    <body>
-        {% for question in questions %}
-            <a href="/questions/{{question.id}}">{{question.subject}} ?</a><br/>
-        {% endfor %}
-    </body>
-</html>
+{% extends "base.html" %}
+
+{% block title %} Questions {% endblock %}
+{% block content %}
+    {% for question in questions %}
+        <a href="{% url "question_detail" question.id %}">{{question.subject}} ?</a><br/>
+    {% endfor %}
+{% endblock %}

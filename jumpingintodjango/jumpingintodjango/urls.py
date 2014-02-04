@@ -14,6 +14,6 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^questions/$','questionsandanswers.views.index'),
-    url(r'^questions/(?P<question_id>\d+)/$', 'questionsandanswers.views.question_detail'),
+    url(r'^questions/$','questionsandanswers.views.index', name='questions'),
+    url(r'^questions/(?P<question_id>\d+)/$', 'questionsandanswers.views.question_detail', name='question_detail'),
 )
